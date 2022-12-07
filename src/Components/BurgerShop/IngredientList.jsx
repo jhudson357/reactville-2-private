@@ -8,6 +8,7 @@ const IngredientList = (props) => {
 					key={ingredient.name}
 					ingredient={ingredient}
 					isList={true}
+					addToBurger={props.addToBurger}
 				/>
 			)}
 		</ul>

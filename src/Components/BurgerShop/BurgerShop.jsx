@@ -6,9 +6,11 @@ import { useState } from 'react'
 import { ingredients } from '../../data/burger-data'
 
 const BurgerShop = () => {
-  console.log(ingredients)
-
   const [stack, setStack] = useState([])
+
+  const addToBurger = ingredient => {
+    setStack([...stack, ingredient])
+  }
   
   return (
     <div className="burger-shop">
@@ -17,7 +19,7 @@ const BurgerShop = () => {
         <button>Clear Order</button>
       </nav>
       <section>
-        <IngredientList ingredients={ingredients} />
+        <IngredientList ingredients={ingredients} addToBurger={addToBurger}/>
         <BurgerStack stack={stack}/>
       </section>
     </div>
