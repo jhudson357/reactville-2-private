@@ -6,6 +6,11 @@ const Cart = (props) => {
     totalCost = Math.round((totalCost + (item.quantity*item.price))*100) /100
   })
   
+  const handleCheckout = () => {
+    props.clearCart()
+    props.handleExchange(totalCost)
+  }
+
   return (
     <div className="cart">
       <h3>Cart</h3>
@@ -19,7 +24,7 @@ const Cart = (props) => {
         <p>${totalCost}</p>
       </div>
 
-      <button>CHECKOUT</button>
+      <button onClick={() => handleCheckout()}>CHECKOUT</button>
       <button onClick={() => props.clearCart()}>CLEAR CART</button>
     </div>
   )

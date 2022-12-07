@@ -7,7 +7,7 @@ import MarketNav from './MarketNav'
 import DisplayProducts from './DisplayProducts'
 import Cart from './Cart'
 
-const SuperMarket = () => {
+const SuperMarket = (props) => {
   console.log('Imported product data:::', products)
   const [cart, setCart] = useState([])
   const [productCategory, setProductCategory] = useState('Produce')
@@ -54,6 +54,7 @@ const SuperMarket = () => {
         cart={cart}
         removeFromCart={removeFromCart}
         clearCart={clearCart}
+        handleExchange={props.handleExchange}
       />
 
     </div>
