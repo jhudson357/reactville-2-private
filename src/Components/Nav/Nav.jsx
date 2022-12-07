@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom'
 import Logo from '../../assets/react-logo.png'
 import Wallet from './Wallet'
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <nav className="navigation-bar">
       <NavLink to='/' id='logo'><img src={Logo} alt="logo" /></NavLink>
       <NavLink to='/burgers'>BURGER SHOP</NavLink>
       <NavLink to='/market'>SUPER MARKET</NavLink>
-      <Wallet />
+      <Wallet cash={props.cash}/>
     </nav>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { useState } from 'react'
 import './styles/App.css'
 
 // Components
@@ -9,9 +10,15 @@ import Nav from './Components/Nav/Nav'
 import SuperMarket from './Components/SuperMarket/SuperMarket'
 
 const App = () => {
+  const [cash, setCash] = useState(100)
+
+  const handleExchange = (amt) => {
+    // setCash() will be useful here
+  }
+  
   return (
     <>
-      <Nav />
+      <Nav cash={cash}/>
       <main>
         <Routes>
           <Route path='/' element={<Landing />} />
