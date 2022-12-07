@@ -20,7 +20,7 @@ const BurgerShop = () => {
     <div className="burger-shop">
       <nav>
         <h1>Burger Shop</h1>
-        <button>Clear Order</button>
+        <button onClick={() => setStack([])}>Clear Order</button>
       </nav>
       <section>
         <IngredientList ingredients={ingredients} addToBurger={addToBurger}/>
