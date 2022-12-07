@@ -5,14 +5,14 @@ const CategoryMenu = (props) => {
   )
   const uniqueCategories = [...new Set(categories)]
 
-  console.log('Categories',categories)
-  console.log('Unique Categories',uniqueCategories)
+  // console.log('Categories',categories)
+  // console.log('Unique Categories',uniqueCategories)
   
   return (
-    <select>
+    <select onChange={(e) => props.setProductCategory(e.target.value)}>
       {uniqueCategories.map(category => 
-        <option key={category}>
-            {category}
+        <option key={category} value={category}>
+          {category}
         </option>
       )}
     </select>
