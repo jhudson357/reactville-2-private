@@ -1,6 +1,11 @@
 import CartItem from './CartItem'
 
 const Cart = (props) => {
+  let totalCost = 0
+  props.cart.map(item => {
+    totalCost = Math.round((totalCost + (item.quantity*item.price))*100) /100
+  })
+  
   return (
     <div className="cart">
       <h3>Cart</h3>
@@ -11,7 +16,7 @@ const Cart = (props) => {
 
       <div className="cart-total">
         <p>Total:</p>
-        <p>$ Display Amount Here</p>
+        <p>${totalCost}</p>
       </div>
 
       <button>CHECKOUT</button>
