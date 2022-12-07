@@ -4,7 +4,11 @@ const DisplayProducts = (props) => {
   
   const selectedProducts = props.products.map((product, idx) => {
     return props.productCategory === product.category &&
-    <Product key={idx} product={product}/>
+    <Product
+      key={idx}
+      product={product}
+      addToCart={props.addToCart}
+    />
   })
     
 
